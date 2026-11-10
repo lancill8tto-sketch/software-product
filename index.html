@@ -3,135 +3,409 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Organizer - Gestionale Professionale</title>
+    <title>Team Organizer PRO - Gestionale Professionale</title>
     <style>
-        /* Sfondo in fibra di carbonio ad alto impatto visivo e dettaglio superiore */
-        body {
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0d0d0d;
+        }
+
+        /* Trama realistica in vera Fibra di Carbonio 3D */
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0b0b0e;
             background-image: 
-                radial-gradient(circle at 50% 50%, rgba(35, 35, 35, 0.8) 0%, rgba(10, 10, 10, 0.95) 100%),
-                linear-gradient(135deg, #141414 25%, transparent 25%), 
-                linear-gradient(225deg, #141414 25%, transparent 25%),
-                linear-gradient(45deg, #141414 25%, transparent 25%), 
-                linear-gradient(315deg, #141414 25%, transparent 25%);
-            background-size: 100% 100%, 16px 16px, 16px 16px, 16px 16px, 16px 16px;
-            background-position: 0 0, 0 0, 0 8px, 8px -8px, -8px 0px;
+                linear-gradient(27deg, #111116 5px, transparent 5px), 
+                linear-gradient(207deg, #111116 5px, transparent 5px),
+                linear-gradient(27deg, #1c1c24 5px, transparent 5px), 
+                linear-gradient(207deg, #1c1c24 5px, transparent 5px),
+                linear-gradient(90deg, #0d0d11 10px, transparent 10px),
+                linear-gradient(#16161d 25%, #121217 25%, #121217 50%, transparent 50%, transparent 75%, #1f1f27 75%, #1f1f27);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px, 0 0, 0 0;
             color: #ffffff;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
         }
 
-        header {
+        /* Vignettatura profonda per esaltare il carbonio e i dettagli fluo */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 50% 25%, rgba(62, 28, 105, 0.22) 0%, rgba(5, 5, 8, 0.82) 85%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Barra superiore */
+        .top-bar {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 25px 20px;
+            border-bottom: 1px solid rgba(0, 255, 65, 0.2);
+        }
+
+        .brand {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand span {
+            color: #00ff41;
+            text-shadow: 0 0 12px rgba(0, 255, 65, 0.6);
+        }
+
+        .badge-pro {
+            background-color: #24143d;
+            color: #00ff41;
+            border: 1px solid #00ff41;
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+        }
+
+        /* Contenitore Principale */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 50px 20px;
+            flex: 1;
+        }
+
+        /* Sezione Hero Principale */
+        .hero {
             text-align: center;
-            padding: 50px 20px 20px 20px;
+            max-width: 800px;
+            margin: 0 auto 60px auto;
         }
 
-        h1 {
-            font-size: 2.8rem;
-            margin: 0;
-            color: #ffffff;
-            text-shadow: 0 0 15px rgba(0, 255, 65, 0.4);
+        .hero-tag {
+            display: inline-block;
+            background: rgba(36, 20, 61, 0.85);
+            border: 1px solid rgba(0, 255, 65, 0.4);
+            color: #00ff41;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.15);
+        }
+
+        .hero h1 {
+            font-size: 3.6rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        h1 span {
-            color: #00ff41; /* Verde fluo */
+        .hero h1 span {
+            color: #00ff41;
+            text-shadow: 0 0 25px rgba(0, 255, 65, 0.5);
         }
 
-        p.subtitle {
-            font-size: 1.1rem;
-            color: #aaaaaa;
-            margin-top: 10px;
-        }
-
-        .main-container {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        /* Card centrale stile high-tech con bordi curati */
-        .card {
-            background: rgba(18, 15, 26, 0.9);
-            border: 2px solid #36284f;
-            border-radius: 12px;
-            padding: 40px;
-            max-width: 550px;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(112, 0, 255, 0.2);
-        }
-
-        .card h2 {
-            margin-top: 0;
-            color: #ffffff;
-            font-size: 1.8rem;
-        }
-
-        .card p {
-            color: #cccccc;
+        .hero p {
+            font-size: 1.2rem;
+            color: #c4c0cc;
             line-height: 1.6;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
 
-        /* Pulsante viola scuro elegante con contorno e dettagli verde fluo */
-        .btn-action {
-            display: inline-block;
-            background-color: #241738; /* Viola scuro */
-            color: #00ff41; /* Testo verde fluo */
-            font-size: 1.1rem;
-            font-weight: bold;
+        /* Pulsante Principale Viola Scuro con Contorno Animato Verde Fluo */
+        .btn-outline-animated {
+            position: relative;
+            display: inline-flex;
+            padding: 3px;
+            border-radius: 12px;
+            overflow: hidden;
             text-decoration: none;
-            padding: 15px 35px;
-            border-radius: 8px;
-            border: 2px solid #00ff41; /* Contorno verde fluo */
-            transition: all 0.3s ease;
-            box-shadow: 0 0 12px rgba(0, 255, 65, 0.25);
+            box-shadow: 0 0 25px rgba(0, 255, 65, 0.25), 0 10px 30px rgba(0, 0, 0, 0.8);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .btn-action:hover {
-            background-color: #332052;
+        /* Linea verde fluo che scorre lungo il contorno del tasto */
+        .btn-outline-animated::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(
+                from 0deg,
+                transparent 0%,
+                transparent 65%,
+                #00ff41 85%,
+                #b8ffcc 95%,
+                #00ff41 100%
+            );
+            animation: rotateBorder 3s linear infinite;
+        }
+
+        /* Bordo statico di base verde fluo sottile */
+        .btn-outline-animated::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 255, 65, 0.45);
+            pointer-events: none;
+        }
+
+        .btn-inner {
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(145deg, #2b1747 0%, #1a0d2e 100%);
+            color: #00ff41;
+            font-size: 1.15rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 18px 42px;
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .btn-outline-animated:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 0 35px rgba(0, 255, 65, 0.6), 0 15px 35px rgba(0, 0, 0, 0.9);
+        }
+
+        .btn-outline-animated:hover .btn-inner {
+            background: linear-gradient(145deg, #371e59 0%, #24123d 100%);
             color: #ffffff;
-            border-color: #39ff14;
-            box-shadow: 0 0 25px rgba(0, 255, 65, 0.7);
-            transform: translateY(-2px);
+            text-shadow: 0 0 8px rgba(0, 255, 65, 0.8);
         }
 
-        footer {
+        @keyframes rotateBorder {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Card Centrale Download & Vantaggi */
+        .showcase-card {
+            background: linear-gradient(160deg, rgba(28, 17, 46, 0.92) 0%, rgba(16, 11, 26, 0.96) 100%);
+            border: 2px solid #352152;
+            border-top: 2px solid #00ff41;
+            border-radius: 16px;
+            padding: 45px;
+            margin-bottom: 50px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85), 0 0 30px rgba(0, 255, 65, 0.1);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
             text-align: center;
-            padding: 20px;
-            color: #666666;
+        }
+
+        .stat-item {
+            padding: 15px;
+            border-right: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .stat-item:last-child {
+            border-right: none;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #00ff41;
+            text-shadow: 0 0 15px rgba(0, 255, 65, 0.35);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: #d1cbe0;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Griglia delle Funzionalità */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .feature-box {
+            background: rgba(24, 15, 38, 0.88);
+            border: 1px solid #3a2359;
+            border-radius: 14px;
+            padding: 32px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+        }
+
+        .feature-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: #00ff41;
+            box-shadow: 0 0 12px #00ff41;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-5px);
+            background: rgba(33, 20, 54, 0.95);
+            border-color: #00ff41;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 255, 65, 0.25);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background-color: #271540;
+            border: 1px solid #00ff41;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: #00ff41;
+            font-size: 1.5rem;
+            box-shadow: 0 0 12px rgba(0, 255, 65, 0.2);
+        }
+
+        .feature-box h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+
+        .feature-box p {
+            color: #b5afc4;
+            line-height: 1.6;
+            font-size: 0.98rem;
+        }
+
+        /* Footer */
+        footer {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 25px 20px;
+            background: rgba(8, 8, 11, 0.95);
+            border-top: 1px solid rgba(0, 255, 65, 0.2);
+            color: #7a7585;
             font-size: 0.9rem;
-            background: rgba(10, 10, 10, 0.95);
-            border-top: 1px solid #1f1f1f;
+        }
+
+        footer span {
+            color: #00ff41;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .stat-item { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.07); }
+            .stat-item:last-child { border-bottom: none; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Team <span>Organizer</span></h1>
-        <p class="subtitle">Il software gestionale definitivo per aziende e artigiani</p>
-    </header>
-
-    <div class="main-container">
-        <div class="card">
-            <h2>Scarica la versione PRO</h2>
-            <p>Ottieni lo strumento professionale per gestire appuntamenti, clienti con ricerca rapida, collaboratori e invio promemoria su WhatsApp. Interfaccia multilingua e massima sicurezza.</p>
-            
-            <!-- Pulsante con i colori richiesti -->
-            <a href="https://github.com/lancill8tto-sketch/software-product/releases" class="btn-action" target="_blank">Vai alle Release su GitHub</a>
+    <nav class="top-bar">
+        <div class="brand">
+            TEAM <span>ORGANIZER</span>
         </div>
+        <div class="badge-pro">VERSIONE PRO 2026</div>
+    </nav>
+
+    <div class="container">
+        <section class="hero">
+            <div class="hero-tag">Software Gestionale Desktop</div>
+            <h1>Gestisci il tuo Team con <span>Potenza Assoluta</span></h1>
+            <p>La piattaforma professionale definitiva per aziende, tecnici e artigiani. Organizza appuntamenti, gestisci la rubrica clienti e invia notifiche rapide su WhatsApp con un'interfaccia scura ad alte prestazioni.</p>
+            
+            <!-- Pulsante Viola Scuro con contorno verde fluo animato -->
+            <a href="https://github.com/lancill8tto-sketch/software-product/releases" class="btn-outline-animated" target="_blank">
+                <span class="btn-inner">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Scarica Team Organizer
+                </span>
+            </a>
+        </section>
+
+        <!-- Barra Statistiche High-Tech -->
+        <section class="showcase-card">
+            <div class="stat-item">
+                <div class="stat-number">20+</div>
+                <div class="stat-label">Lingue Integrate</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">1-Click</div>
+                <div class="stat-label">Invio Diretto WhatsApp</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Database Locale Sicuro</div>
+            </div>
+        </section>
+
+        <!-- Griglia Funzionalità -->
+        <section class="features-grid">
+            <div class="feature-box">
+                <div class="feature-icon">📅</div>
+                <h3>Agenda & Collaboratori</h3>
+                <p>Pianifica gli interventi giornalieri e assegna gli incarichi alle tue risorse umane in pochi secondi, evitando sovrapposizioni e ritardi.</p>
+            </div>
+
+            <div class="feature-box">
+                <div class="feature-icon">💬</div>
+                <h3>Integrazione WhatsApp</h3>
+                <p>Contatta i tuoi clienti o invia promemoria immediati degli appuntamenti direttamente dal programma con un solo clic.</p>
+            </div>
+
+            <div class="feature-box">
+                <div class="feature-icon">🔍</div>
+                <h3>Rubrica & Ricerca Istantanea</h3>
+                <p>Trova subito lo storico di ogni cliente, gli indirizzi di intervento e i recapiti grazie al motore di ricerca interno ultraveloce.</p>
+            </div>
+        </section>
     </div>
 
     <footer>
-        &copy; 2026 Team Organizer. Tutti i diritti riservati.
+        &copy; 2026 <span>Team Organizer</span>. Tutti i diritti riservati.
     </footer>
 
 </body>
