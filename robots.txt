@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lancill8tto-sketch.github.io/software-product/sitemap.xml
