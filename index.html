@@ -127,6 +127,28 @@
     .stage .float.c{display:none}
     @media(max-width:1150px){.stage .checklist-float{width:62px;height:86px;right:0}.stage .float.b{width:73px;height:77px}.stage .ticket-float{width:55px;height:55px}.stage .float.a{width:65px;height:65px}}
     @media(max-width:650px){.stage{min-height:300px}.stage .checklist-float{width:42px;height:64px;top:10%}.stage .checklist-float svg{width:34px}.stage .ticket-float{width:40px;height:40px;bottom:12%}.stage .ticket-float svg{width:30px}.stage .float.a{width:45px;height:45px}.stage .float.b{width:48px;height:52px}.stage .laptop{transform:none}}
+
+    /* Reference-aligned composition: prominent dashboard, floating devices, bright arcs */
+    .hero{isolation:isolate}
+    .hero::before{content:"";position:absolute;z-index:-1;pointer-events:none;left:24%;right:-12%;top:15%;height:64%;border-radius:50%;border-top:24px solid #08bafa;border-bottom:8px solid #ff9019;transform:rotate(-12deg);filter:drop-shadow(0 0 18px #05aeff)}
+    .hero .stage{min-width:0;width:100%;transform:scale(1.04);transform-origin:center}
+    .stage .laptop{width:min(100%,690px)}
+    .stage .screen{background:linear-gradient(145deg,#06162d,#0a305a);border-radius:22px 22px 9px 9px}
+    .stage .dashmain{background:#08264b;border-radius:12px;padding:7px}
+    .stage .stats .stat{box-shadow:inset 0 1px 0 #7cceff2b}
+    .stage .panel{background:linear-gradient(145deg,#0c315c,#092344)}
+    .stage .orbit{border-top-color:#04bbff;border-bottom-color:#ff931e;opacity:.8}
+    .stage .base{height:20px;filter:drop-shadow(0 6px 10px #009eff)}
+    .section-title .bar{background:#31e4ff;box-shadow:0 0 14px #20dfff}
+    .features{gap:13px}
+    .feature{border:1px solid #26a6df;border-radius:16px;min-height:175px;box-shadow:inset 0 0 22px #0066b933,0 0 18px #008cff22}
+    .feature:hover{transform:translateY(-3px);border-color:#5be5ff}
+    .biz{border-top:1px solid #1bb9f0;border-bottom:1px solid #1bb9f0}
+    .biz-copy strong{color:#ff9822}
+    @media(min-width:1500px){.hero.shell{grid-template-columns:minmax(140px,.38fr) minmax(390px,.92fr) minmax(600px,1.45fr)}.hero .stage{transform:scale(1.08)}}
+    @media(min-width:781px) and (max-width:1499px){.hero.shell{grid-template-columns:minmax(340px,.88fr) minmax(470px,1.12fr)}.hero .stage{transform:scale(1.02)}}
+    @media(max-width:780px){.hero::before{left:-15%;right:-15%;top:38%;height:30%;border-width:10px}.hero .stage{transform:none}.stage .laptop{width:100%}}
+    @media(max-width:480px){.hero::before{display:none}.stage .screen{border-width:2px}.feature{min-height:0}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
   </style>
 </head>
