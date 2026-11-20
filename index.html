@@ -92,6 +92,26 @@
     @media(max-width:1100px){.shell{padding:0 24px}.nav-links{gap:16px}.nav-links a{font-size:12px}.hero{grid-template-columns:1fr 1fr}.features{grid-template-columns:repeat(3,1fr)}.float.a{left:-1%}.float.b{right:-1%}.stage{min-height:390px}.screen{height:335px}.panel{min-height:151px}.laptop{max-width:550px}}
     @media(max-width:780px){.nav{flex-wrap:wrap;gap:14px}.nav-links{order:3;width:100%;justify-content:space-between;gap:9px;flex-wrap:wrap}.nav-links a{font-size:12px}.nav .pill{min-height:39px;padding:8px 13px;font-size:12px}.hero{grid-template-columns:1fr;padding:57px 0 50px;gap:28px}.hero h1{font-size:clamp(41px,9vw,66px)}.stage{min-height:370px}.laptop{width:min(100%,620px)}.screen{height:340px}.float.a{left:0}.float.b{right:0}.features{grid-template-columns:repeat(2,1fr)}.biz{grid-template-columns:1fr}.biz-copy{padding:0 25px 36px}.biz-art{min-height:280px}.benefits{grid-template-columns:1fr 1fr 1fr}}
     @media(max-width:480px){.shell{padding:0 18px}.brand{font-size:17px}.logo{width:47px;height:72px}.nav-links a{font-size:11px}.hero h1{letter-spacing:-1.7px}.lead{font-size:15px}.hero .pill{width:100%}.stage{transform:scale(.95);transform-origin:center;min-height:315px}.screen{height:277px;grid-template-columns:71px 1fr;gap:6px;padding:10px}.dashside{padding:5px 2px}.dash-logo{font-size:7px;padding:5px 2px}.side-item{font-size:7px;padding:5px 3px;gap:3px}.side-item::before{width:5px;height:5px}.dash-head{font-size:12px;margin-bottom:7px}.dashboard-tag{font-size:7px}.stat{padding:6px 4px}.stat .tiny{font-size:7px}.stat .value{font-size:9px}.panel{padding:6px;min-height:139px}.panel h4{font-size:9px;margin-bottom:10px}.agenda-row{gap:4px;margin:9px 0}.agenda-row small{min-width:20px;font-size:7px}.agenda-row span{font-size:7px;padding:4px}.ticket{font-size:7px;margin:8px 0}.ticket i{font-size:6px}.float.a,.float.b,.float.c{transform:scale(.65)}.features{grid-template-columns:1fr}.feature{min-height:0}.benefits{grid-template-columns:1fr}.foot{display:block}.foot span{display:block;margin-bottom:7px}}
+
+    /* Visual refresh based on approved reference; responsive and accessible */
+    .page{background:radial-gradient(ellipse 65% 40% at 70% 17%,#075c9a55,transparent 75%),linear-gradient(180deg,#04162f 0%,#031125 68%,#071c36 100%)}
+    .nav{padding:16px 0}.nav-links a:hover{color:#3de3ff}
+    .hero{padding-top:52px;padding-bottom:48px;min-height:490px}
+    .hero h1{font-size:clamp(43px,5.1vw,76px);line-height:1.04}
+    .hero h1 em{color:#42ddf5}
+    .stage::before{background:radial-gradient(ellipse at center,#008bfa75,transparent 70%)}
+    .screen{border-color:#70d4ff;box-shadow:inset 0 0 0 7px #092240,0 0 28px #008cee90}
+    .feature{border-color:#159ed0;box-shadow:inset 0 1px 0 #fff2,0 0 17px #006ba825;background:linear-gradient(150deg,#113a65,#071e39)}
+    .feature-icon{color:#42e4ff}.section{padding:45px 0}
+    .biz{grid-template-columns:1fr 1.05fr;gap:0;background:linear-gradient(90deg,#0b3a64,#061b36)}
+    .biz-art{background:linear-gradient(90deg,#0b335255,transparent),url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=82') center/cover no-repeat;min-height:360px}
+    .biz-art::before{display:none}.biz-art .people,.biz-art .floating-note{display:none}
+    .biz-copy{padding:40px clamp(20px,3vw,55px)}.biz-copy h2{font-size:clamp(27px,3vw,42px)}
+    .benefits{gap:12px}.benefits div{border-left-color:#27d9ff}
+    .reference-ribbon{height:8px;background:linear-gradient(90deg,#03a5f9,#022e56 44%,#ff9219 100%);box-shadow:0 0 22px #159cf766}
+    @media(min-width:1500px){.hero.shell{max-width:1660px}.shell{max-width:1460px}.hero-brand-large img{max-width:235px}}
+    @media(max-width:780px){.hero{padding-top:42px}.biz{grid-template-columns:1fr}.biz-art{min-height:270px}.biz-copy{padding:28px 24px}.benefits{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:480px){.biz-art{min-height:215px}.benefits{grid-template-columns:1fr}.hero h1{font-size:clamp(40px,10vw,55px)}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
   </style>
 </head>
@@ -175,12 +195,13 @@
       <section id="aziende" class="biz" aria-labelledby="biz-title">
         <div class="biz-art" aria-hidden="true"><div class="people"><div class="person"></div><div class="person middle"></div><div class="person"></div></div><span class="floating-note">✓ Il tuo team, coordinato</span></div>
         <div class="biz-copy">
-          <span class="kicker">PER AZIENDE E PROFESSIONISTI</span>
-          <h2 id="biz-title">Più ordine.<br><strong>Più controllo.</strong><br>Più spazio per crescere.</h2>
+          <span class="kicker">PER LE AZIENDE</span>
+          <h2 id="biz-title">La soluzione professionale<br>per organizzare <strong>team e processi.</strong></h2>
           <p>Team Organizer PRO nasce per semplificare la gestione operativa di aziende, artigiani, studi e squadre di assistenza: meno strumenti sparsi, più chiarezza su attività e persone.</p>
           <div class="benefits"><div><b>Organizzazione</b><small>Attività chiare e accessibili.</small></div><div><b>Collaborazione</b><small>Un quadro condiviso del lavoro.</small></div><div><b>Controllo</b><small>Clienti e interventi più ordinati.</small></div></div>
         </div>
       </section>
+      <div class="reference-ribbon" aria-hidden="true"></div>
       <section class="bottom shell" id="progetto" aria-labelledby="project-title">
         <div class="kicker">PROGETTO IN EVOLUZIONE</div>
         <h2 id="project-title">Il prossimo passo per la tua organizzazione.</h2>
