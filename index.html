@@ -154,6 +154,37 @@
     @media(max-width:780px){.hero::before{left:-15%;right:-15%;top:38%;height:30%;border-width:10px}.hero .stage{transform:none}.stage .laptop{width:100%}}
     @media(max-width:480px){.hero::before{display:none}.stage .screen{border-width:2px}.feature{min-height:0}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+  
+    /* Safe responsive refinements: preserve the original logo and hero artwork. */
+    .hero > *, .stage, .laptop, .dashmain, .biz > *{min-width:0}
+    .identity .brand{overflow-wrap:normal}
+    .hero .stage{max-width:100%}
+    .stage .screen{max-width:100%}
+    .nav-links a,.pill{touch-action:manipulation}
+    @media (max-width:780px){
+      .hero.shell{grid-template-columns:minmax(0,1fr)}
+      .hero .stage{width:100%;max-width:640px;margin-inline:auto}
+      .hero .laptop{max-width:100%}
+      .hero::before{pointer-events:none}
+      .nav-links{row-gap:12px}
+    }
+    @media (max-width:480px){
+      .hero .stage{transform:none;min-height:300px}
+      .hero .laptop{filter:drop-shadow(0 18px 20px #0009)}
+      .hero .stage .float{box-shadow:0 8px 18px #0008}
+      .hero .stage .float.a{left:1%}
+      .hero .stage .float.b{right:1%}
+      .hero .stage .ticket-float{left:3%}
+      .hero .stage .checklist-float{right:2%}
+      .nav-links{justify-content:flex-start;column-gap:16px}
+      .nav-links a{padding-block:7px}
+    }
+    @media (max-width:360px){
+      .shell{padding-inline:14px}
+      .hero h1{font-size:clamp(34px,10vw,43px)}
+      .brand{font-size:15px}
+      .hero .stage{min-height:280px}
+    }
   </style>
 </head>
 <body>
